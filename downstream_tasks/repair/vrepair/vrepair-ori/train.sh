@@ -1,0 +1,17 @@
+python codebert_wordlevel_main.py \
+    --output_dir=./saved_models \
+    --model_name=model.bin \
+    --config_name=roberta-base \
+    --do_train \
+    --train_data_file=../data/fine_tune_data/patchdb_train_vrepair_comb.csv \
+    --eval_data_file=../data/fine_tune_data/patchdb_test_vrepair3.csv \
+    --test_data_file=../data/fine_tune_data/patchdb_test_vrepair3.csv \
+    --epochs 75 \
+    --encoder_block_size 512 \
+    --decoder_block_size 256 \
+    --train_batch_size 8 \
+    --eval_batch_size 8 \
+    --learning_rate 2e-5 \
+    --max_grad_norm 1.0 \
+    --evaluate_during_training \
+    --seed 123456

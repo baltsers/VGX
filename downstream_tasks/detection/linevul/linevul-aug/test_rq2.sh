@@ -1,0 +1,16 @@
+python linevul_main.py \
+  --model_name=model_wild.bin \
+  --output_dir=./saved_models \
+  --model_type=roberta \
+  --tokenizer_name=microsoft/codebert-base \
+  --model_name_or_path=microsoft/codebert-base \
+  --do_test \
+  --do_local_explanation \
+  --top_k_constant=10 \
+  --reasoning_method=attention \
+  --train_data_file=../data/big-vul_dataset/train.csv \
+  --eval_data_file=../data/big-vul_dataset/val.csv \
+  --test_data_file=../data/big-vul_dataset/latest_cve.csv \
+  --block_size 512 \
+  --write_raw_pred \
+  --eval_batch_size 512
